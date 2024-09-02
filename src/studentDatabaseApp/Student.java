@@ -11,9 +11,11 @@ public class Student {
 	private int tuitionBalance = 0;
 	private int costOfCourse = 600;
 	private static int id = 1000;
+	
 //	constructor: Prompts user to enter students name and year
 	public Student(){
 		System.out.print("Enter the student's first name: ");
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		this.firstName = in.nextLine(); 
 		
@@ -33,8 +35,9 @@ public class Student {
 	}
 //	enroll in courses
 	public void enroll() {
-		System.out.println("Enter the course you would like to enroll to (q to quit):");
 		do {
+			System.out.print("Enter the course you would like to enroll to (q to quit):");
+			@SuppressWarnings("resource")
 			Scanner in = new Scanner(System.in);			
 			String course = in.nextLine();
 			if(!course.equals("Q")) {
@@ -52,17 +55,19 @@ public class Student {
 	}
 //	pay tuition
 	public void payTuition() {
+		System.out.println("Aa\n");
 		viewBalance();
 		int amount;
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter the amount you wanna pay: $");
 		amount = in.nextInt();
 		this.tuitionBalance = this.tuitionBalance - amount;
-		System.out.println("Thank you for your payment of: $" + amount);
+		System.out.println("\n\nThank you for your payment of: $" + amount);
 		this.viewBalance();
 	}
 //	show status
 	public void showStatus() {
-		
+		System.out.println("\n\n\nName: " + firstName + " " + lname + "\nCourses Enrolled: " + courses + "\nBalance: $" + this.tuitionBalance + "\nStudent ID: " + studentID);
 	}
 }	
