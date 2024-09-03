@@ -55,7 +55,7 @@ public class Student {
 	}
 //	pay tuition
 	public void payTuition() {
-		System.out.println("Aa\n");
+		System.out.println("\n");
 		viewBalance();
 		int amount;
 		@SuppressWarnings("resource")
